@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Controlled App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" role="main">
+      <h1>Voice Controlled App</h1>
+      <button id="start" aria-label="Start listening to voice commands">
+        Start Listening
+      </button>
+      <button id="toggleDarkMode" aria-label="Toggle dark mode">
+        Toggle Dark Mode
+      </button>
+      <div id="result" class="result" aria-live="polite"></div>
+      <div class="commands" aria-label="Available commands">
+        <h2>Available Commands:</h2>
+        <ul>
+          <li><strong>Say "hello"</strong>: Responds with a greeting</li>
+          <li><strong>Say "open Google"</strong>: Opens Google in a new tab</li>
+          <li>
+            <strong>Say "change colour"</strong>: Changes the background colour
+          </li>
+          <li><strong>Say "play a song"</strong>: Plays a sample audio</li>
+          <li><strong>Say "scroll down"</strong>: Scrolls the page down</li>
+          <li><strong>Say "scroll up"</strong>: Scrolls the page up</li>
+          <li><strong>Say "tell me a joke"</strong>: Tells a random joke</li>
+          <li>
+            <strong>Say "what's the time?"</strong>: Tells the current time
+          </li>
+          <li>
+            <strong>Say "open [website]"</strong>: Opens the specified website
+          </li>
+          <li>
+            <strong>Say "search for [query]"</strong>: Searches Google for the
+            query
+          </li>
+          <li>
+            <strong>Say "show me a fact"</strong>: Responds with a random fact
+          </li>
+          <li>
+            <strong>Say "set a timer for [X] minutes"</strong>: Sets a timer
+          </li>
+          <li>
+            <strong>Say "what's the weather like?"</strong>: Tells the current
+            weather
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

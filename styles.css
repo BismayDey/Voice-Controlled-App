@@ -1,0 +1,101 @@
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  transition: background-color 0.5s ease; /* Smooth background color transition */
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease; /* Fade-in animation */
+}
+
+h1 {
+  color: red;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.5em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin: 10px 0; /* Add margin between buttons */
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05); /* Button scale animation */
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards; /* Fade-in effect for results */
+}
+
+.commands {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.commands ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.commands li {
+  margin: 10px 0;
+  transition: transform 0.2s;
+}
+
+.commands li:hover {
+  transform: translateX(10px); /* Subtle movement effect on hover */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dark-mode {
+  background-color: #333333; /* Dark mode */
+  color: white; /* Change text color to white */
+}
+
+.dark-mode .container {
+  background-color: #444; /* Darker background for container in dark mode */
+}
+
+.dark-mode .result {
+  color: white; /* Change result text to white in dark mode */
+}
+
+.dark-mode button {
+  background-color: #4caf50; /* Button background for dark mode */
+}
+
+.dark-mode button:hover {
+  background-color: #45a049; /* Darker hover effect for button */
+}
+
+/* Listening state */
+button.listening {
+  background-color: #ff9800; /* Change color when listening */
+}
