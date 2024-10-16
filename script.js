@@ -126,14 +126,44 @@ if ("webkitSpeechRecognition" in window && "speechSynthesis" in window) {
         speak(response);
       }
     } else if (command.includes("what's the weather like")) {
-      // Here you would implement a call to a weather API
-      const response = "I'm unable to check the weather right now.";
-      resultDiv.innerHTML += `<br/>${response}`;
-      speak(response);
+      getLocationAndWeather(); // Call location-based weather function
     } else {
       const response = "Command not recognized.";
       resultDiv.innerHTML += `<br/>${response}`;
       speak(response);
+    }
+  }
+
+  // Function to get weather by location
+  function getWeatherByLocation(lat, lon) {
+    const apiKey = "1af1dd95978e9f13891a4e550bfea80f";
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        const weather = `The weather at your location is ${data.weather[0].description} with a temperature of ${data.main.temp}°C.`;
+        resultDiv.innerHTML += `<br/>${weather}`;
+        speak(weather);
+      })
+      .catch((error) => {
+        const errorMessage = "Unable to retrieve weather data.";
+        resultDiv.innerHTML += `<br/>${errorMessage}`;
+        speak(errorMessage);
+      });
+  }
+
+  // Function to get location and then fetch weather
+  function getLocationAndWeather() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords;
+        getWeatherByLocation(latitude, longitude);
+      });
+    } else {
+      const errorMessage = "Geolocation is not supported by this browser.";
+      resultDiv.innerHTML += `<br/>${errorMessage}`;
+      speak(errorMessage);
     }
   }
 
