@@ -3,17 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Voice Controlled App</title>
+    <title>Voice Controlled Web App</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- External CSS -->
   </head>
   <body>
     <div class="container" role="main">
-      <h1>Voice Controlled App</h1>
+      <h1>Voice Controlled Web App</h1>
       <button id="start" aria-label="Start listening to voice commands">
         Start Listening
-      </button>
-      <button id="toggleDarkMode" aria-label="Toggle dark mode">
-        Toggle Dark Mode
       </button>
       <div id="result" class="result" aria-live="polite"></div>
       <div class="commands" aria-label="Available commands">
@@ -42,14 +40,17 @@
             <strong>Say "show me a fact"</strong>: Responds with a random fact
           </li>
           <li>
-            <strong>Say "set a timer for [X] minutes"</strong>: Sets a timer
-          </li>
-          <li>
-            <strong>Say "what's the weather like?"</strong>: Tells the current
-            weather
+            <strong>Say "toggle dark mode"</strong>: Switches between light and
+            dark themes
           </li>
         </ul>
       </div>
+
+      <!-- Dark mode toggle switch -->
+      <label class="switch">
+        <input type="checkbox" id="toggleDarkModeButton" />
+        <span class="slider"></span>
+      </label>
     </div>
     <script src="script.js"></script>
   </body>
