@@ -10,9 +10,18 @@
   <body>
     <div class="container" role="main">
       <h1>Voice Controlled Web App</h1>
-      <button id="start" aria-label="Start listening to voice commands">
-        Start Listening
-      </button>
+
+      <div
+        class="scene"
+        id="start"
+        aria-label="Start listening to voice commands"
+      >
+        <div class="cube" id="cube">
+          <span class="side top">Listening</span>
+          <span class="side front">Start Listening</span>
+        </div>
+      </div>
+
       <div id="result" class="result" aria-live="polite"></div>
       <div class="commands" aria-label="Available commands">
         <h2>Available Commands:</h2>
